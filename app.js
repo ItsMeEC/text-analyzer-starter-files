@@ -12,3 +12,8 @@ function countDistinctWords(tokens) {
 	}
 	return distinctWords.length;
 }
+
+//couldnt figure this one out
+function tokenizeText(text) {
+  return text.toLowerCase().match(/\b[^\s]+\b/g).sort();
+}
