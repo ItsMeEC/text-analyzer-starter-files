@@ -17,3 +17,14 @@ function countDistinctWords(tokens) {
 function tokenizeText(text) {
   return text.toLowerCase().match(/\b[^\s]+\b/g).sort();
 }
+
+function removeReturns(text) {
+  return text.replace(/\r?\n|\r/g, "");
+}
+
+function reportOnText(text) {
+
+  var tokens = tokenizeText(text);
+  var numDistinctWords = countDistinctWords(tokens);
+  var numTotalWords = tokens.length;
+  var averageWordLength = getAverageWordLength(tokens);
