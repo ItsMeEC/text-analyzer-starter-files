@@ -36,3 +36,16 @@ function reportOnText(text) {
   averageWordLength + " characters");
   textReport.removeClass('hidden');
 }
+//couldnt figure this out
+function watchFormSubmission() {
+  $('.js-text-form').submit(function(event) {
+    event.preventDefault();
+    var userText = $(this).find('#user-text').val();
+    reportOnText(removeReturns(userText));
+  });
+}
+
+//didnt know $document.ready could be compressed
+$(function() {
+  watchFormSubmission();
+});
